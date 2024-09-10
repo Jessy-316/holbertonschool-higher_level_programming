@@ -1,13 +1,7 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    seen = set()
-    unique = set()
-
-    for numbers in my_list:
-        if numbers in seen:
-            unique.discard(numbers)
-        else:
-            seen.add(numbers)
-            unique.add(numbers)
-
-    return sum(unique)
+    new_list = set(my_list)
+    result = 0
+    for numbers in new_list:
+        result += numbers
+    return result
