@@ -5,16 +5,17 @@
 def matrix_divided(matrix, div):
     """
     Function that divides each number in a matrix by the given number.
-    
+
     Args:
         matrix: A list of lists containing integers or floats.
         div: The number to divide by (must be integer or float).
-    
+
     Returns:
-        A new matrix with the result of the division rounded to 2 decimal places.
+        A new matrix with the result of the div rounded to 2 decimal places.
 
     Raises:
-        TypeError: If the matrix contains non-numeric values or if div is not a number.
+        TypeError: If the matrix contains non-numeric values
+        or if div is not a number.
         TypeError: If the rows of the matrix are not all the same size.
         ZeroDivisionError: If div is zero.
     """
