@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+This module defines a rectangle class for representing rectangles.
+
+The Rectangle class has attributes width and height with validation,
+and provides methods for accessing and setting these attributes.
+"""
+
+
 class Rectangle():
     """ Represents a rectangle.
 
