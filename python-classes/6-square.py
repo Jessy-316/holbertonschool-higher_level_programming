@@ -7,15 +7,18 @@ class Square:
 
     Attributes:
         __size (int): The size of the square's sides (must be >= 0).
-        __position (tuple): The position of the square (tuple of 2 positive integers).
+        __position (tuple): The position of the square
+        (tuple of 2 positive integers).
     """
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializes a Square instance with size and position validation.
 
         Args:
-            size (int, optional): The size of the square's sides. Defaults to 0.
-            position (tuple of 2 positive integers, optional): The position to start printing the square. Defaults to (0, 0).
+            size (int, optional): The size of the square's sides.
+            Defaults to 0.
+            position (tuple of 2 positive integers, optional):
+            The position to start printing the square. Defaults to (0, 0).
 
         Raises:
             TypeError: If size is not an integer.
@@ -65,7 +68,8 @@ class Square:
         """Setter for the position attribute with validation.
 
         Args:
-            value (tuple): The position of the square as a tuple of 2 positive integers.
+            value (tuple): The position of the square as a
+            tuple of 2 positive integers.
 
         Raises:
             TypeError: If value is not a tuple of 2 positive integers.
@@ -86,10 +90,13 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints a square using the '#' character based on its size and position.
+        """Prints a square using the '#' character
+        based on its size and position.
 
-        If the size is 0, an empty line is printed. Otherwise, the square is printed
-        with the side length corresponding to the size attribute and offset by the position.
+        If the size is 0, an empty line is printed. Otherwise,
+        the square is printed
+        with the side length corresponding to the size attribute and
+        offset by the position.
         """
         if self.__size == 0:
             print()
