@@ -3,6 +3,7 @@
 
 
 class Node():
+    """Represents a node in a singly linked list"""
     def __init__(self, data, next_node=None):
         """Initializes the Node with data and next_node"""
         self.data = data
