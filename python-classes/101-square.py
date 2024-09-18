@@ -10,7 +10,6 @@ class Square:
         __position (tuple): The position of the square
         (tuple of 2 positive integers).
     """
-
     def __init__(self, size=0, position=(0, 0)):
         """Initializes a Square instance with size and position validation.
 
