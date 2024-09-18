@@ -74,11 +74,10 @@ class Square:
         Raises:
             TypeError: If value is not a tuple of 2 positive integers.
         """
-        error = "position must be a tuple of 2 positive integers"
         if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError(error)
+            raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(num, int) and num >= 0 for num in value):
-            raise TypeError(error)
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
@@ -106,7 +105,7 @@ class Square:
             print()
 
         for i in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+            print("_" * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
         """Returns the string representation of the square for printing"""
@@ -116,7 +115,7 @@ class Square:
         result = []
         result.append("\n" * self.__position[1])
 
-        for index in range(self.__size):
+        for _ in range(self.__size):
             result.append("_" * self.__position[0] + "#" * self.__size + "\n")
 
         return "".join(result).rstrip()
