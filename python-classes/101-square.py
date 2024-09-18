@@ -104,7 +104,7 @@ class Square:
             print()
 
         for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+            print("_" * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
         """Returns the string representation of the square for printing"""
@@ -115,16 +115,6 @@ class Square:
         result.append("\n" * self.__position[1])
 
         for _ in range(self.__size):
-            result.append(" " * self.__position[0] + "#" * self.__size + "\n")
+            result.append("_" * self.__position[0] + "#" * self.__size + "\n")
 
         return "".join(result).rstrip()
-
-
-
-my_square = Square(5, (0, 0))
-print(my_square)
-
-print("--")
-
-my_square = Square(5, (4, 1))
-print(my_square)
