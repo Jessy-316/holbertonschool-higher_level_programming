@@ -17,4 +17,4 @@ A subclass of list with an additional method to print the list in sorted order.
 
         Assumes that all elements in the list are type int.
         """
-        print(sorted(self))
+        print(f"{sorted(self)}")
