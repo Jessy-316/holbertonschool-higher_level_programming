@@ -1,5 +1,7 @@
+#!/usr/bin/python3
+"""Duck typing"""
 from abc import ABC, abstractmethod
-import math
+from math import pi
 
 
 class Shape(ABC):
@@ -38,14 +40,15 @@ class Circle(Shape):
         radius (float): The radius of the circle.
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         Initialize the Circle instance with a radius.
 
         Args:
             radius (float): The radius of the circle.
         """
-        self.radius = radius
+        if type(radius) in [int, float]:
+            self.radius = abs(radius)
 
     def area(self):
         """Calculate the area of the circle.
@@ -53,7 +56,7 @@ class Circle(Shape):
         Returns:
             float: The area of the circle.
         """
-        return (math.pi * self.radius ** 2)
+        return (pi * (self.radius ** 2))
 
     def perimeter(self):
         """Calculate the perimeter (circumference) of the circle.
@@ -61,7 +64,7 @@ class Circle(Shape):
         Returns:
             float: The perimeter of the circle.
         """
-        return (2 * math.pi * self.radius)
+        return (2 * pi * self.radius)
 
 
 class Rectangle(Shape):
@@ -73,7 +76,7 @@ class Rectangle(Shape):
         height (float): The height of the rectangle.
     """
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """
         Initialize the Rectangle instance with width and height.
 
@@ -81,8 +84,11 @@ class Rectangle(Shape):
             width (float): The width of the rectangle.
             height (float): The height of the rectangle.
         """
-        self.width = width
-        self.height = height
+        if type(width) in [int, float]:
+            self.width = width
+
+        if type(height) in [int, float]:
+            self.height = height
 
     def area(self):
         """Calculate the area of the rectangle.
@@ -98,10 +104,10 @@ class Rectangle(Shape):
         Returns:
             float: The perimeter of the rectangle.
         """
-        return (2 * (self.width + self.height))
+        return (2 * self.height) + (2 * self.width)
 
 
-def shape_info(Shape):
+def shape_info(shape):
     """
     Display the area and perimeter of a shape.
 
@@ -110,5 +116,5 @@ def shape_info(Shape):
         the Shape interface.
     """
 
-    print(f"Area: {Shape.area()}")
-    print(f"Perimeter: {Shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
