@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./python-input_output/5-"
+    ]
+}
