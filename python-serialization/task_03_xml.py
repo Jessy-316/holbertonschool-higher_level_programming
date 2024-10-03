@@ -29,7 +29,7 @@ def serialize_to_xml(dictionary, filename):
 
     """Create an ElementTree object and write to the file."""
     tree = ET.ElementTree(root)
-    tree.write(filename, encoding='utf-8', xml_declaration=True)
+    tree.write(filename)
 
 
 def deserialize_from_xml(filename):
@@ -52,17 +52,7 @@ def deserialize_from_xml(filename):
 
     """Create a dictionary to hold the deserialized data."""
     deserialized_dict = {}
-
-    """Iterate through the child elements and populate the dictionary."""
     for child in root:
-        """Attempt to convert text to int if it is a number."""
-        try:
-            """Convert text to integer if possible."""
-            value = int(child.text)
-        except (ValueError, TypeError):
-            """If conversion fails, keep the value as a string."""
-            value = child.text
-        """Add tag and value to the dictionary."""
-        deserialized_dict[child.tag] = value
+        deserialized_dict[child.tag] = child.text
 
     return deserialized_dict
