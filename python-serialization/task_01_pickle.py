@@ -49,8 +49,11 @@ class CustomObject:
             filename (str): The name of the file where the object
             will be serialized and saved.
         """
-        with open(filename, 'wb') as pklfile:
-            pickle.dump(self, pklfile)
+        try:
+            with open(filename, 'wb') as pklfile:
+                pickle.dump(self, pklfile)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -66,6 +69,8 @@ class CustomObject:
             CustomObject: The deserialized instance of
             the CustomObject.
         """
-        with open(filename, 'rb') as pklfile:
-            obj = pickle.load(pklfile)
-        return obj
+        try:
+            with open(filename, 'rb') as pklfile:
+                return pickle.load(pklfile)
+        except Exception:
+            return None
