@@ -25,7 +25,7 @@ def fetch_and_save_posts():
         structured_data = [{'id': post['id'], 'title': post['title'],
                             'body': post['body']} for post in posts]
 
-        with open('posts.cdv', mode='w', newline='',
+        with open('posts.csv', mode='w', newline='',
                   encoding='utf-8') as csvfile:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
