@@ -35,8 +35,3 @@ def fetch_and_save_posts():
         print("Data has been successfully written to posts.csv")
     else:
         print(f"Failed to fetch posts. Status Code: {request.status_code}")
-
-
-
-fetch_and_print_posts()
-fetch_and_save_posts()
