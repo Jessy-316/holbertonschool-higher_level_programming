@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -91,7 +90,7 @@ def handle_revoked_token_error(err):
 
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
-    return jsonify("error": "Fresh token required"), 401
+    return jsonify({"error": "Fresh token required"}), 401
 
 
 if __name__ == '__main__':
