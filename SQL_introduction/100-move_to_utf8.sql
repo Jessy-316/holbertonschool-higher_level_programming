@@ -15,4 +15,5 @@ COLLATE utf8mb4_unicode_ci;
 -- Step 3: Convert the field name in first_table to utf8mb4
 ALTER TABLE first_table
 MODIFY name VARCHAR(256)
-COLLATE utf8mb4_unicode_ci;
+COLLATE utf8mb4_unicode_ci
+DEFAULT NULL;
