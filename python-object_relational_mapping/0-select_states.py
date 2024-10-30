@@ -8,8 +8,9 @@ mysql username, mysql password, database name
 import MySQLdb
 import sys
 
+
 def state_list(username, password, database_name):
-    """"""
+    """Connects to MySQL server"""
     try:
         conn = MySQLdb.connect(
             host='localhost',
@@ -29,6 +30,7 @@ def state_list(username, password, database_name):
 
     except MySQLdb.Error as error:
         print(f"Error connecting to MySQL or executing query: {error}")
+
 
 if __name__ == "__main__":
     state_list(sys.argv[1], sys.argv[2], sys.argv[3])
