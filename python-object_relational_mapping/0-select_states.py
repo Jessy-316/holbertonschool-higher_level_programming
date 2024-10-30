@@ -6,23 +6,29 @@ mysql username, mysql password, database name
 """
 
 import MySQLdb
-from sys import argv
+import sys
+
+def state_list(username, password, database_name):
+    """"""
+    try:
+        conn = MySQLdb.connect(
+            host='localhost',
+            port=3306,
+            user=username,
+            password=password,
+            database=database_name
+        )
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+        states = cursor.fetchall()
+        for state in states:
+            print(state)
+
+        cursor.close()
+        conn.close()
+
+    except MySQLdb.Error as error:
+        print(f"Error connecting to MySQL or executing query: {error}")
 
 if __name__ == "__main__":
-
-    # Connect to the database
-    database = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        password=argv[2],
-        db=argv[3]
-    )
-
-    # Create cursor to exec queries using SQL
-    cursor = database.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    for row in cursor.fetchall():
-        print(row)
-    cursor.close()
-    database.close()
+    state_list(sys.argv[1], sys.argv[2], sys.argv[3])
