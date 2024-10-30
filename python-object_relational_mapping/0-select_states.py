@@ -16,8 +16,8 @@ def state_list(username, password, database_name):
             host='localhost',
             port=3306,
             user=username,
-            password=password,
-            database=database_name
+            passwd=password,
+            db=database_name
         )
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
