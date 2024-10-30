@@ -11,11 +11,13 @@ from sys import argv
 if __name__ == "__main__":
 
     # Connect to the database
-    database = MySQLdb.connect(host="localhost",
-                               port=3306,
-                               user=argv[1],
-                               password=argv[2],
-                               db=argv[3])
+    database = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        password=argv[2],
+        db=argv[3]
+    )
 
     # Create cursor to exec queries using SQL
     cursor = database.cursor()
