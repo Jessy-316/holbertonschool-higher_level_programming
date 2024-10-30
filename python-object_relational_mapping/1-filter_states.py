@@ -20,8 +20,8 @@ def state_list(username, password, database_name):
             db=database_name
         )
         cursor = conn.cursor()
-        cursor.execute(
-            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
+                    ORDER BY states.id ASC")
         states = cursor.fetchall()
         for state in states:
             print(state)
